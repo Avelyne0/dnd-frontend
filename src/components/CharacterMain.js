@@ -4,7 +4,7 @@ const CharacterMain = ({ character }) => {
     return(
         <div>
             <p>Gender: {character.gender}</p>
-            <p>Class: {character.class}</p>
+            <p>Class: {character.charClass}</p>
             <p>Race: {character.race}</p>
             <p>Age: {character.age}</p>
             <p>Height: {character.height}</p>
