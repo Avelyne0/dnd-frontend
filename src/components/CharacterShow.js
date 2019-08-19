@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import img_source from '../img_source.json'
+
 
 export default class CharacterShow extends Component {
   state = {
@@ -9,6 +11,23 @@ export default class CharacterShow extends Component {
     this.setState({ showDetails: !this.state.showDetails });
   };
 
+  setCharacterImage = () => {
+   
+    var { race, charClass, gender } = this.props.character
+   
+
+    if (race && charClass && gender) {
+      if(race.toLowerCase().includes("genasi")){
+        return img_source["Genasi"][race.toLowerCase().split(' ').join('-') + "-" + gender.toLowerCase() ]
+      } else {
+      const superRace = Object.keys(img_source).find(r => race.toLowerCase().includes(r.toLowerCase()))
+      return img_source[superRace][charClass.toLowerCase() + "-" + gender.toLowerCase()]
+      }
+    } else {
+      return 
+    }
+  }
+
   render() {
     let { character } = this.props || [];
 
@@ -18,7 +37,7 @@ export default class CharacterShow extends Component {
       <div id="card" className="ui card">
         <div className="image">
           <img
-            src="https://1d4chan.org/images/thumb/1/17/Iggwilv_2.jpg/200px-Iggwilv_2.jpg"
+            src={this.setCharacterImage()}
             alt="temp"
           />
         </div>
@@ -28,7 +47,7 @@ export default class CharacterShow extends Component {
             <span className="date">{character.gender}</span>
           </div>
           <div className="description">
-            <p>Class: {character.class}</p>
+            <p>Class: {character.charClass}</p>
             <p>Race: {character.race}</p>
             <p>Age: {character.age}</p>
             <p>Height: {character.height}</p>

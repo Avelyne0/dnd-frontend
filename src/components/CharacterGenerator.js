@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { rollAttribute, random, randomRange } from './utils/utils'
 import data from '../data.json'
-import img_source from '../img_source.json'
 import CharacterShow from './CharacterShow.js';
 
 export default class CharacterGenerator extends Component {
@@ -23,7 +22,6 @@ export default class CharacterGenerator extends Component {
     this.setCharacterStatsRaceSkills()
     this.setCharacterAlignmentBackgroundDeity()
     this.setCharacterClass()
-    this.setCharacterImage()
   }
 
   setCharacterName = () => {
@@ -64,7 +62,7 @@ export default class CharacterGenerator extends Component {
 
   setCharacterClass = () => {
     const characterClass = random(data.classes)
-    this.setState({ class: characterClass })
+    this.setState({ charClass: characterClass })
   }
 
   setCharacterStatsRaceSkills = () => {
@@ -155,10 +153,7 @@ export default class CharacterGenerator extends Component {
     this.setState({ additionalNotes: [...this.state.additionalNotes, additionalNotes] })
   }
 
-  setCharacterImage = () => {
-    const imgSourceArray = img_source.find(array => Object.keys(array)[0].includes(this.state.race.toLocaleLowerCase()))
-    console.log(imgSourceArray)
-  }
+
 
   changeOneStat = (key = "STR") => {
     this.setState({
