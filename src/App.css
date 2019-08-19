@@ -31,3 +31,27 @@
     transform: rotate(360deg);
   }
 }
+
+
+#header {
+  display: flex;
+  justify-content: center;
+  background: #B2B0B0;
+  opacity: .8;
+  height: 7rem;
+  padding: 1rem;
+}
+
+#logo {
+    height: 6rem;
+    width: auto;
+  }
+/* 
+#card {
+  height: 10em;
+  position: relative;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto; 
+} */
