@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import img_source from '../img_source.json'
-
+import img_source from '../img_source.json';
+import CharacterMain from "./CharacterMain";
+import CharacterDetails from "./CharacterDetails";
 
 export default class CharacterShow extends Component {
   state = {
@@ -12,10 +13,7 @@ export default class CharacterShow extends Component {
   };
 
   setCharacterImage = () => {
-   
     var { race, charClass, gender } = this.props.character
-   
-
     if (race && charClass && gender) {
       if(race.toLowerCase().includes("genasi")){
         return img_source["Genasi"][race.toLowerCase().split(' ').join('-') + "-" + gender.toLowerCase() ]
@@ -29,41 +27,34 @@ export default class CharacterShow extends Component {
   }
 
   render() {
-    let { character } = this.props || [];
+    let { character } = this.props;
 
-    // debugger
-    console.log(character);
+    console.log(this.props)
+
     return (
-      <div id="card" className="ui card">
-        <div className="image">
-          <img
-            src={this.setCharacterImage()}
-            alt="temp"
-          />
-        </div>
-        <div className="content">
-          <h1 className="header">{character.name}</h1>
-          <div className="meta">
-            <span className="date">{character.gender}</span>
+      <div className="ui one column stackable center aligned page grid">
+        <div className="ui center aligned card">
+          <div className="image">
+            <img
+              src={this.setCharacterImage()}
+              alt="temp"
+            />
           </div>
-          <div className="description">
-            <p>Class: {character.charClass}</p>
-            <p>Race: {character.race}</p>
-            <p>Age: {character.age}</p>
-            <p>Height: {character.height}</p>
-            <p>Weight: {character.weight}</p>
-            <p>Eyes: {character.eyes}</p>
-            <p>Skin: {character.skin}</p>
-            <p>Alignment: {character.alignment}</p>
-            {character.additionalNotes !== undefined
-            ? character.additionalNotes.map(note => <p key={note}>{note}</p>)
-              : null}
-            <p>{character.flaws}</p>
-          <p>{character.backgroundFeature}</p>
+          <div className="content">
+            <h4 className="header">{character.name}</h4>
+            <div className="description">
+              {this.state.showDetails ? (
+                <CharacterDetails character={character} />
+              ) : (
+                <CharacterMain character={character} />
+              )}
+            </div>
           </div>
-        </div>
-        <div className="extra content" onClick={this.toggleShowDetails}>
-          <i className="d and d icon">more details </i>
+          <div className="extra content" onClick={this.toggleShowDetails}>
+            <i className="d and d icon">
+              {this.state.showDetails ? "Back" : "Show Details"}
+            </i>
+          </div>
         </div>
       </div>
     );

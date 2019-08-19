@@ -48,15 +48,14 @@ export default class CharacterGenerator extends Component {
     const filteredDeities = filteredDeitiesArray.map(array => array[0].god)
 
     this.setState({
-      background: {
-        name: background.name,
+
+        backgroundName: background.name,
         backgroundFeature: background.backgroundFeature,
         ideals: random(validIdeals),
         bonds: random(background.bonds),
         flaws: random(background.flaws),
         personalityTraits: random(background.personalityTraits),
         deity: random(filteredDeities)
-      },
     })
   }
 
@@ -97,26 +96,24 @@ export default class CharacterGenerator extends Component {
     var WIS = rollAttribute()
     var CHA = rollAttribute()
     this.setState({
-      stats: {
-        STR: STR,
-        DEX: DEX,
-        CON: CON,
-        INT: INT,
-        WIS: WIS,
-        CHA: CHA
-      }
-    })
-    const strBonus = Math.floor((STR - 10) / 2)
-    const strSkillBonus = strBonus + this.state.skills.Proficiency
-    const dexBonus = Math.floor((DEX - 10) / 2)
-    const dexSkillBonus = dexBonus + this.state.skills.Proficiency
-    const conBonus = Math.floor((CON - 10) / 2)
-    const intBonus = Math.floor((INT - 10) / 2)
-    const intSkillBonus = intBonus + this.state.skills.Proficiency
-    const wisBonus = Math.floor((WIS - 10) / 2)
-    const wisSkillBonus = wisBonus + this.state.skills.Proficiency
-    const chaBonus = Math.floor((CHA - 10) / 2)
-    const chaSkillBonus = chaBonus + this.state.skills.Proficiency
+      STR: STR,
+      DEX: DEX,
+      CON: CON,
+      INT: INT,
+      WIS: WIS,
+      CHA: CHA
+    });
+    const strBonus = Math.floor((STR - 10) / 2);
+    const strSkillBonus = strBonus + this.state.skills.Proficiency;
+    const dexBonus = Math.floor((DEX - 10) / 2);
+    const dexSkillBonus = dexBonus + this.state.skills.Proficiency;
+    const conBonus = Math.floor((CON - 10) / 2);
+    const intBonus = Math.floor((INT - 10) / 2);
+    const intSkillBonus = intBonus + this.state.skills.Proficiency;
+    const wisBonus = Math.floor((WIS - 10) / 2);
+    const wisSkillBonus = wisBonus + this.state.skills.Proficiency;
+    const chaBonus = Math.floor((CHA - 10) / 2);
+    const chaSkillBonus = chaBonus + this.state.skills.Proficiency;
     this.setState({
       skills: {
         ...this.state.skills,
@@ -141,13 +138,13 @@ export default class CharacterGenerator extends Component {
       }
     })
     this.setState({
-      PhysicalCharacteristics: {
-        age: age,
-        weight: weight,
-        height: height,
-        skin: skin,
-        eyes: eyes
-      }
+
+      age: age,
+      weight: weight,
+      height: height,
+      skin: skin,
+      eyes: eyes
+
     })
     const additionalNotes = race.additionalNotes
     this.setState({ additionalNotes: [...this.state.additionalNotes, additionalNotes] })
@@ -166,7 +163,7 @@ export default class CharacterGenerator extends Component {
 
   render() {
     return (
-      <div>
+      <div centre>
         <CharacterShow character={this.state} />
       </div>
     )
