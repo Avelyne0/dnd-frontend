@@ -23,7 +23,7 @@ export default class CharacterShow extends Component {
           />
         </div>
         <div className="content">
-          <a className="header">{character.name}</a>
+          <h1 className="header">{character.name}</h1>
           <div className="meta">
             <span className="date">{character.gender}</span>
           </div>
@@ -40,8 +40,7 @@ export default class CharacterShow extends Component {
             ? character.additionalNotes.map(note => <p key={note}>{note}</p>)
               : null}
             <p>{character.flaws}</p>
-            
-          <p>{character.background}</p>
+          <p>{character.backgroundFeature}</p>
           </div>
         </div>
         <div className="extra content" onClick={this.toggleShowDetails}>
