@@ -4,7 +4,7 @@ import Logo from './Logo.png'
 const Header = () => {
     return(
         <div id="header">
-            <img id="logo" src={Logo}/>
+            <img id="logo" src={Logo} alt="logo"/>
         </div>
     )
 }

@@ -46,12 +46,13 @@
     height: 6rem;
     width: auto;
   }
-/* 
-#card {
-  height: 10em;
-  position: relative;
-  margin-top: auto;
-  margin-bottom: auto;
+
+#table {
   margin-left: auto;
-  margin-right: auto; 
-} */
+  margin-right: auto
+}
+
+img {
+  height: 25%;
+}
+
