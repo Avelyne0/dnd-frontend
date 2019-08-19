@@ -3,11 +3,6 @@ import React from 'react';
 const CharacterDetails = ({ character }) => {
     return(
         <div>
-            <p>Personality traits: {character.personalityTraits}</p>      
-            {character.additionalNotes !== undefined
-            ? character.additionalNotes.map(note => <p key={note}>{note}</p>)
-            : null}
-
             <h3>Stats:</h3>
             <table id="table" className="ui very basic collapsing celled table">
                 <tbody>
@@ -35,35 +30,10 @@ const CharacterDetails = ({ character }) => {
                     <td>{character.WIS}</td>
                     </tr>
                 </tbody>
-            </table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
+            </table>    
+            {character.additionalNotes !== undefined
+            ? character.additionalNotes.map(note => <p key={note}>{note}</p>)
+            : null} 
         </div>
     )
 }

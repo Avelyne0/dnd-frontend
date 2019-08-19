@@ -16,6 +16,7 @@ const CharacterMain = ({ character }) => {
             <p>Flaws: {character.flaws}</p>
             <p>Bonds: {character.bonds}</p>
             <p>Ideals: {character.ideals}</p>
+            <p>Personality traits: {character.personalityTraits}</p>  
         </div>
     )
 }
