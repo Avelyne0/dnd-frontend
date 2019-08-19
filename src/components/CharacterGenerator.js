@@ -89,14 +89,12 @@ export default class CharacterGenerator extends Component {
     var WIS = rollAttribute();
     var CHA = rollAttribute();
     this.setState({
-      stats: {
-        STR: STR,
-        DEX: DEX,
-        CON: CON,
-        INT: INT,
-        WIS: WIS,
-        CHA: CHA
-      }
+      STR: STR,
+      DEX: DEX,
+      CON: CON,
+      INT: INT,
+      WIS: WIS,
+      CHA: CHA
     });
     const strBonus = Math.floor((STR - 10) / 2);
     const strSkillBonus = strBonus + this.state.skills.Proficiency;
@@ -154,7 +152,7 @@ export default class CharacterGenerator extends Component {
 
   render() {
     return (
-      <div>
+      <div centre>
         <CharacterShow character={this.state} />
       </div>
     );
