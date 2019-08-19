@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { rollAttribute, random, randomRange } from './utils/utils'
 import data from '../data.json'
+import img_source from '../img_source.json'
 import CharacterShow from './CharacterShow.js';
 
 export default class CharacterGenerator extends Component {
@@ -155,7 +156,8 @@ export default class CharacterGenerator extends Component {
   }
 
   setCharacterImage = () => {
-    const raceImageArray = this.state.race
+    const imgSourceArray = img_source.find(array => Object.keys(array)[0].includes(this.state.race.toLocaleLowerCase()))
+    console.log(imgSourceArray)
   }
 
   changeOneStat = (key = "STR") => {
