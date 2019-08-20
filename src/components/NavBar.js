@@ -5,8 +5,9 @@ import {
   Container,
   Menu,
   Segment,
-  Visibility,
+  Visibility
 } from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
 
 
 const Navbar = ({ home, user, signUp, logIn, logOut }) => {
@@ -24,18 +25,28 @@ const Navbar = ({ home, user, signUp, logIn, logOut }) => {
             <Menu.Item onClick={home}>
               <i className="d and d icon huge" /><h1>Bardic Inspiration</h1>
             </Menu.Item>
-            <Menu.Item position='right'>
-              {
-                user ? <Button color='google plus' onClick={logOut}>Log out</Button> : <>
-                  <Menu.Item>
-                    <UserForm submit={signUp} header={'Sign up'} />
-                  </Menu.Item>
-                  <Menu.Item>
-                    <UserForm submit={logIn} header={'Log in'} />
+            {
+              user ? <>
+                <Menu.Item 
+                as={Link}
+                to='/characters/'
+                >
+                  All Characters
+                </Menu.Item>
+                <Menu.Item position='right'>
+                  <Button color='google plus' onClick={logOut}>Log out</Button>
+                </Menu.Item>
+              </> : <>
+                  <Menu.Item position='right'>
+                    <Menu.Item>
+                      <UserForm submit={signUp} header={'Sign up'} />
+                    </Menu.Item>
+                    <Menu.Item>
+                      <UserForm submit={logIn} header={'Log in'} />
+                    </Menu.Item>
                   </Menu.Item>
                 </>
-              }
-            </Menu.Item>
+            }
           </Container>
         </Menu>
       </Segment>

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import img_source from '../img_source.json';
 import CharacterMain from "./CharacterMain";
 import CharacterDetails from "./CharacterDetails";
-import { Container, Grid, Image, Segment, Button, Icon } from 'semantic-ui-react'
+import { Grid, Image, Segment, Button, Icon } from 'semantic-ui-react'
 
 export default class CharacterShow extends Component {
   state = {

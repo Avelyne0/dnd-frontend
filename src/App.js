@@ -1,6 +1,5 @@
 import React from 'react';
 import CharacterGenerator from './components/CharacterGenerator';
-import Header from './components/Header';
 import './App.css';
 import Navbar from './components/NavBar.js';
 import API from './adapters/API';
@@ -8,8 +7,7 @@ import { Route, Switch, Redirect } from 'react-router-dom'
 import CharacterShow from './components/CharacterShow';
 import { Container, Card, Dropdown } from 'semantic-ui-react'
 import { generateCharacter } from './components/utils/characterGenerator'
-import CharacterCard from './components/CharacterCard';
-import { arrayTypeAnnotation } from '@babel/types';
+
 import CharacterContainer from './containers/CharacterContainer';
 
 
@@ -78,11 +76,13 @@ class App extends React.Component {
     return <CharacterShow {...props} back={() => this.setState({ selectedCharacter: null })} {...selectedCharacter} />
   }
 
-  sortCharactersArray = (array) => array.sort((charA, charB) => charB.age - charA.age)
+  sortCharactersArray = (array) => array.sort((charA, charB) => charA.age - charB.age)
 
   filterCharactersArray = (array, filterOption) => {
     return array.filter(character => (character.race.toLocaleLowerCase().includes(filterOption.toLocaleLowerCase())))
   }
+
+
 
   onFilterChange = (event, { value }) => {
     console.log(value)
