@@ -15,19 +15,8 @@ class App extends React.Component {
   state = {
     user: null,
     characters: [],
-    selectedCharacter: null,
+    selectedCharacter: null
     // characters: Array.apply(null, Array(30)).map(() => generateCharacter()),
-    filterOption: '',
-    filterOptions: [
-      'elf',
-      'dwarf',
-      'human',
-      'gnome',
-      'goliath',
-      'genasi',
-      'halfling',
-      'orc'
-    ]
   }
 
   componentDidMount() {
@@ -75,14 +64,13 @@ class App extends React.Component {
       })
   }
 
+  sortCharactersArray = (array) => array.sort((charA, charB) => charA.age - charB.age)
+
+
   characterIndexPage = (props) => {
-    const filteredCharacters = this.filterCharactersArray(this.state.characters, this.state.filterOption)
-    const characters = this.sortCharactersArray(filteredCharacters)
+    const characters = this.sortCharactersArray(this.state.characters)
     return <CharacterContainer
       {...props}
-      handleChange={this.filterChange}
-      filterOption={this.state.filterOption}
-      filterOptions={this.state.filterOptions}
       characters={characters}
     />
   }
@@ -95,15 +83,7 @@ class App extends React.Component {
     return <CharacterShow {...props} back={() => this.setState({ selectedCharacter: null })} {...selectedCharacter} />
   }
 
-  sortCharactersArray = (array) => array.sort((charA, charB) => charA.age - charB.age)
 
-  filterCharactersArray = (array, filterOption) => {
-    return array.filter(character => (character.race.toLocaleLowerCase().includes(filterOption.toLocaleLowerCase())))
-  }
-
-  onFilterChange = value => {
-    this.setState({ filterOption: value })
-  }
 
 
   deleteCharacter = id => {
