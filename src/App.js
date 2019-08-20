@@ -10,6 +10,7 @@ import { Container, Card, Dropdown } from 'semantic-ui-react'
 import { generateCharacter } from './components/utils/characterGenerator'
 import CharacterCard from './components/CharacterCard';
 import { arrayTypeAnnotation } from '@babel/types';
+import CharacterContainer from './containers/CharacterContainer';
 
 
 class App extends React.Component {
@@ -66,22 +67,7 @@ class App extends React.Component {
   characterIndexPage = (props) => {
     const filteredCharacters = this.filterCharactersArray(this.state.characters, this.state.filterOption)
     const characters = this.sortCharactersArray(filteredCharacters)
-    return (
-      <>
-        <Dropdown
-          onChange={this.onFilterChange}
-          placeholder='Select Race'
-          fluid
-          selection
-          options={["elf", "human", "dwarf"].map(race => ({key: race, text: race, value: race,}))}
-/>
-        <Card.Group>
-          {
-            characters.map(character => <CharacterCard character={character} />)
-          }
-        </Card.Group>
-      </>
-    )
+    return <CharacterContainer {...props} filterChange={this.filterChange} characters={characters}/>
   }
 
   characterShowPage = (props) => {

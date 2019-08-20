@@ -5,13 +5,13 @@ import CharacterDetails from "./CharacterDetails";
 import { Card, Grid, Image, Segment, Button, Icon } from 'semantic-ui-react'
 
 
-export default function CharacterCard({character}) {
+export default function CharacterCard({ character }) {
   return (
     <Card className="ui center aligned card">
-    <div>{character.name}</div>
-    <div>{character.age}</div>
-    <div>{character.race}</div>
-        </Card> 
+      <div>{character.name}</div>
+      <div>{character.age}</div>
+      <div>{character.race}</div>
+    </Card>
   )
 }
 
