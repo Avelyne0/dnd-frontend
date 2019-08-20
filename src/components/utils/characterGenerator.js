@@ -29,6 +29,11 @@ const setCharacterImage = () => {
 }
 
 export const generateCharacter = () => {
+  char = {
+    Proficiency: 2,
+    additionalNotes: [],
+    skills: []
+  }
   setCharacterName()
   setCharacterStatsRaceSkills()
   setCharacterAlignmentBackgroundDeity()

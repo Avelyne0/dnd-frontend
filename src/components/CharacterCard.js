@@ -1,6 +1,6 @@
 import React from 'react'
 import { Card, Grid, Image, Segment, Button, Icon } from 'semantic-ui-react'
-
+import { Link } from 'react-router-dom'
 
 export default function CharacterCard({ character }) {
   return (
@@ -12,11 +12,13 @@ export default function CharacterCard({ character }) {
       <Card.Content>
         <Card.Header>{character.name}</Card.Header>
         <Card.Meta>
-          <span className='date'>{character.charClass}</span>
+          <span className='date'>{character.char_class}</span>
         </Card.Meta>
         <Card.Description>
         {character.race}
       </Card.Description>
+      <Button as={Link}
+                to={'/characters/' + character.id}/>
       </Card.Content>
     </Card>
 

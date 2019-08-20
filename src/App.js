@@ -15,13 +15,24 @@ class App extends React.Component {
   state = {
     user: null,
     characters: [],
+    selectedCharacter: null,
     // characters: Array.apply(null, Array(30)).map(() => generateCharacter()),
-    filterOption: ''
+    filterOption: '',
+    filterOptions: [
+      'elf',
+      'dwarf',
+      'human',
+      'gnome',
+      'goliath',
+      'genasi',
+      'halfling',
+      'orc'
+    ]
   }
 
   componentDidMount() {
     API.getCharacters()
-    .then(characters => this.setState({ characters }))
+      .then(characters => this.setState({ characters }))
     API.validateUser()
       .then(this.postAuth)
   }
@@ -55,7 +66,7 @@ class App extends React.Component {
 
   submitCharacter = (character) => {
     API.postCharacter(character, this.state.user)
-      .then(data => this.setState({ user: { ...this.state.user, characters: [...this.state.user.characters, data.characters] } }))
+      .then(this.setState({ characters: [...this.state.characters, character] }))
       .catch(errorPromise => {
         errorPromise
           .then(data => {
@@ -67,12 +78,18 @@ class App extends React.Component {
   characterIndexPage = (props) => {
     const filteredCharacters = this.filterCharactersArray(this.state.characters, this.state.filterOption)
     const characters = this.sortCharactersArray(filteredCharacters)
-    return <CharacterContainer {...props} filterChange={this.filterChange} characters={characters}/>
+    return <CharacterContainer
+      {...props}
+      handleChange={this.filterChange}
+      filterOption={this.state.filterOption}
+      filterOptions={this.state.filterOptions}
+      characters={characters}
+    />
   }
 
   characterShowPage = (props) => {
     const selectedCharacter = this.state.characters.find(character => character.id === parseInt(props.match.params.id))
-    if (!selectedCharacter) return <div>Loading character</div>
+    if (!selectedCharacter) return <div>Loading Character</div>
     if (!this.state.user) return <Redirect to="/login" />
 
     return <CharacterShow {...props} back={() => this.setState({ selectedCharacter: null })} {...selectedCharacter} />
@@ -84,11 +101,16 @@ class App extends React.Component {
     return array.filter(character => (character.race.toLocaleLowerCase().includes(filterOption.toLocaleLowerCase())))
   }
 
+  onFilterChange = value => {
+    this.setState({ filterOption: value })
+  }
 
 
-  onFilterChange = (event, { value }) => {
-    console.log(value)
-    this.setState({filterOption: value})
+  deleteCharacter = id => {
+    API.deleteCharacter(id)
+      .then(this.setState({
+        characters: this.state.characters.filter(character => character.id !== id)
+      }))
   }
 
   render() {
