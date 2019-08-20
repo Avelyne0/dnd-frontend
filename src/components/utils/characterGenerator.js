@@ -3,7 +3,9 @@ import data from '../../data.json'
 import img_source from '../../img_source.json'
 
 let char = {
-  Proficiency: 2
+  Proficiency: 2,
+  additionalNotes: [],
+  skills: []
 }
 const updateChar = (newStats) => {
   char = {
@@ -82,7 +84,7 @@ const setCharacterStatsRaceSkills = () => {
     const draconicAncestry = random(race.draconicAncestry)
     const draconicAncestryName = Object.keys(draconicAncestry)[0]
     const draconicAncestryEffect = Object.values(draconicAncestry)[0]
-    // updateChar({ additionalNotes: [...char.additionalNotes, draconicAncestryName, draconicAncestryEffect] })
+    updateChar({ additionalNotes: [...char.additionalNotes, draconicAncestryName, draconicAncestryEffect] })
     skin = `${draconicAncestryName.toLocaleLowerCase().split(' ')[0]} scales`
   }
 
@@ -124,28 +126,28 @@ const setCharacterStatsRaceSkills = () => {
   const wisSkillBonus = wisBonus + char.Proficiency;
   const chaBonus = Math.floor((CHA - 10) / 2);
   const chaSkillBonus = chaBonus + char.Proficiency;
-  // updateChar({
-  //   skills: {
-  //     Athletics: strSkillBonus,
-  //     Acrobatics: dexSkillBonus,
-  //     SleightOfHand: dexSkillBonus,
-  //     Stealth: dexSkillBonus,
-  //     Arcana: intSkillBonus,
-  //     History: intSkillBonus,
-  //     Investigation: intSkillBonus,
-  //     Nature: intSkillBonus,
-  //     Religion: intSkillBonus,
-  //     AnimalHandling: wisSkillBonus,
-  //     Insight: wisSkillBonus,
-  //     Medicine: wisSkillBonus,
-  //     Perception: wisSkillBonus,
-  //     Survival: wisSkillBonus,
-  //     Deception: chaSkillBonus,
-  //     Intimidation: chaSkillBonus,
-  //     Performance: chaSkillBonus,
-  //     Persuasion: chaSkillBonus,
-  //   }
-  // })
+  updateChar({
+    skills: {
+      Athletics: strSkillBonus,
+      Acrobatics: dexSkillBonus,
+      SleightOfHand: dexSkillBonus,
+      Stealth: dexSkillBonus,
+      Arcana: intSkillBonus,
+      History: intSkillBonus,
+      Investigation: intSkillBonus,
+      Nature: intSkillBonus,
+      Religion: intSkillBonus,
+      AnimalHandling: wisSkillBonus,
+      Insight: wisSkillBonus,
+      Medicine: wisSkillBonus,
+      Perception: wisSkillBonus,
+      Survival: wisSkillBonus,
+      Deception: chaSkillBonus,
+      Intimidation: chaSkillBonus,
+      Performance: chaSkillBonus,
+      Persuasion: chaSkillBonus,
+    }
+  })
   updateChar({
 
     age: age,
@@ -155,6 +157,6 @@ const setCharacterStatsRaceSkills = () => {
     eyes: eyes
 
   })
-  // const additionalNotes = race.additionalNotes
-  // updateChar({ additionalNotes: [...char.additionalNotes, additionalNotes] })
+  const additionalNotes = race.additionalNotes
+  updateChar({ additionalNotes: [...char.additionalNotes, additionalNotes] })
 }

@@ -1,7 +1,4 @@
 import React from 'react'
-import img_source from '../img_source.json';
-import CharacterMain from "./CharacterMain";
-import CharacterDetails from "./CharacterDetails";
 import { Card, Grid, Image, Segment, Button, Icon } from 'semantic-ui-react'
 
 

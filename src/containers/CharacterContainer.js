@@ -7,7 +7,7 @@ export default class CharacterContainer extends Component {
     return (
       <>
         <Dropdown
-          onChange={this.onFilterChange}
+          onChange={this.props.onFilterChange}
           placeholder='Select Race'
           fluid
           selection

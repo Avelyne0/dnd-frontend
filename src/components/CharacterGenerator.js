@@ -15,16 +15,6 @@ export default class CharacterGenerator extends Component {
     this.setState({selectedCharacter: generateCharacter()})
   }
 
-
-  changeOneStat = (key = "STR") => {
-    this.setState({
-      stats: {
-        ...this.state.stats,
-        [key]: rollAttribute()
-      }
-    })
-  }
-
   render() {
     const character = this.state.selectedCharacter
     return (
