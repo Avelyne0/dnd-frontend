@@ -8,10 +8,22 @@ import { Card, Grid, Image, Segment, Button, Icon } from 'semantic-ui-react'
 export default function CharacterCard({ character }) {
   return (
     <Card className="ui center aligned card">
-      <div>{character.name}</div>
-      <div>{character.age}</div>
-      <div>{character.race}</div>
+      <Image
+        src={character.img_source}
+        wrapped ui={false}
+      />
+      <Card.Content>
+        <Card.Header>{character.name}</Card.Header>
+        <Card.Meta>
+          <span className='date'>{character.charClass}</span>
+        </Card.Meta>
+        <Card.Description>
+        {character.race}
+      </Card.Description>
+      </Card.Content>
     </Card>
+
+
   )
 }
 

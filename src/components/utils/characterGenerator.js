@@ -1,8 +1,9 @@
 import { rollAttribute, random, randomRange } from './utils'
 import data from '../../data.json'
+import img_source from '../../img_source.json'
 
 let char = {
-    Proficiency: 2
+  Proficiency: 2
 }
 const updateChar = (newStats) => {
   char = {
@@ -10,12 +11,28 @@ const updateChar = (newStats) => {
     ...newStats
   }
 }
+
+const setCharacterImage = () => {
+  const { race, charClass, gender } = char
+  if (race && charClass && gender) {
+    if (race.toLowerCase().includes("genasi")) {
+      updateChar({img_source: img_source["Genasi"][race.toLowerCase().split(' ').join('-') + "-" + gender.toLowerCase()]})
+    } else {
+      const superRace = Object.keys(img_source).find(r => race.toLowerCase().includes(r.toLowerCase()))
+      updateChar({img_source: img_source[superRace][charClass.toLowerCase() + "-" + gender.toLowerCase()]})
+    }
+  } else {
+    return
+  }
+}
+
 export const generateCharacter = () => {
   setCharacterName()
   setCharacterStatsRaceSkills()
   setCharacterAlignmentBackgroundDeity()
   setCharacterClass()
-  return {...char}
+  setCharacterImage()
+  return { ...char }
 }
 
 const setCharacterName = () => {
