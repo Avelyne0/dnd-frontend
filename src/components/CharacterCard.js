@@ -6,7 +6,7 @@ export default function CharacterCard({ character }) {
   return (
     <Card className="ui center aligned card">
       <Image
-        src={character.img_source}
+        src={character.img_url}
         wrapped ui={false}
       />
       <Card.Content>

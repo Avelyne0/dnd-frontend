@@ -18,10 +18,10 @@ const setCharacterImage = () => {
   const { race, charClass, gender } = char
   if (race && charClass && gender) {
     if (race.toLowerCase().includes("genasi")) {
-      updateChar({img_source: img_source["Genasi"][race.toLowerCase().split(' ').join('-') + "-" + gender.toLowerCase()]})
+      updateChar({img_url: img_source["Genasi"][race.toLowerCase().split(' ').join('-') + "-" + gender.toLowerCase()]})
     } else {
       const superRace = Object.keys(img_source).find(r => race.toLowerCase().includes(r.toLowerCase()))
-      updateChar({img_source: img_source[superRace][charClass.toLowerCase() + "-" + gender.toLowerCase()]})
+      updateChar({img_url: img_source[superRace][charClass.toLowerCase() + "-" + gender.toLowerCase()]})
     }
   } else {
     return
@@ -51,17 +51,14 @@ const setCharacterName = () => {
 
 const setCharacterAlignmentBackgroundDeity = () => {
   const alignment = random(data.alignments)
-  updateChar({ alignment: alignment })
-
+  updateChar({ alignment })
   const background = Object.values(random(data.backgrounds))[0]
   const alignmentSplit = alignment.toLocaleLowerCase().split(' ')
   const validIdealArray = background.ideals.filter(ideal => alignmentSplit.includes(ideal[0].alignment.toLocaleLowerCase()) || "any" === ideal[0].alignment.toLocaleLowerCase())
   const validIdeals = validIdealArray.map(array => array[1].ideal)
   const filteredDeitiesArray = data.deities.filter(deity => alignmentSplit.includes(deity[1].alignment.toLocaleLowerCase()))
   const filteredDeities = filteredDeitiesArray.map(array => array[0].god)
-
   updateChar({
-
     backgroundName: background.name,
     backgroundFeature: background.backgroundFeature,
     ideals: random(validIdeals),
@@ -71,12 +68,10 @@ const setCharacterAlignmentBackgroundDeity = () => {
     deity: random(filteredDeities)
   })
 }
-
 const setCharacterClass = () => {
   const characterClass = random(data.classes)
   updateChar({ charClass: characterClass })
 }
-
 const setCharacterStatsRaceSkills = () => {
   const race = Object.values(random(data.races))[0]
   var skin = random(race.physicalCharacteristics[0].skin)
@@ -87,7 +82,6 @@ const setCharacterStatsRaceSkills = () => {
     updateChar({ additionalNotes: [...char.additionalNotes, draconicAncestryName, draconicAncestryEffect] })
     skin = `${draconicAncestryName.toLocaleLowerCase().split(' ')[0]} scales`
   }
-
   const age = Math.floor(randomRange(race.ageRange))
   const weight = Math.floor(randomRange(race.weightRange)) + "lbs"
   const realHeight = randomRange(race.heightRange);
@@ -149,13 +143,11 @@ const setCharacterStatsRaceSkills = () => {
     }
   })
   updateChar({
-
     age: age,
     weight: weight,
     height: height,
     skin: skin,
     eyes: eyes
-
   })
   const additionalNotes = race.additionalNotes
   updateChar({ additionalNotes: [...char.additionalNotes, additionalNotes] })

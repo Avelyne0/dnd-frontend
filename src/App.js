@@ -5,8 +5,7 @@ import Navbar from './components/NavBar.js';
 import API from './adapters/API';
 import { Route, Switch, Redirect } from 'react-router-dom'
 import CharacterShow from './components/CharacterShow';
-import { Container, Card, Dropdown } from 'semantic-ui-react'
-import { generateCharacter } from './components/utils/characterGenerator'
+import { Container } from 'semantic-ui-react'
 
 import CharacterContainer from './containers/CharacterContainer';
 
@@ -15,11 +14,14 @@ class App extends React.Component {
 
   state = {
     user: null,
-    characters: Array.apply(null, Array(30)).map(() => generateCharacter()),
+    characters: [],
+    // characters: Array.apply(null, Array(30)).map(() => generateCharacter()),
     filterOption: ''
   }
 
   componentDidMount() {
+    API.getCharacters()
+    .then(characters => this.setState({ characters }))
     API.validateUser()
       .then(this.postAuth)
   }
@@ -52,7 +54,7 @@ class App extends React.Component {
   }
 
   submitCharacter = (character) => {
-    API.postCharacter(character)
+    API.postCharacter(character, this.state.user)
       .then(data => this.setState({ user: { ...this.state.user, characters: [...this.state.user.characters, data.characters] } }))
       .catch(errorPromise => {
         errorPromise

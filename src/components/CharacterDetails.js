@@ -1,6 +1,7 @@
 import React from 'react';
 
 const CharacterDetails = ({ character }) => {
+    var additionalNotes = character.additionalNotes
     return(
         <div>
             <h3>Stats:</h3>
@@ -31,9 +32,10 @@ const CharacterDetails = ({ character }) => {
                     </tr>
                 </tbody>
             </table>    
-            {character.additionalNotes !== undefined
-            ? character.additionalNotes[0].map(note => <div key={note}>{note}</div>)
-            : null} 
+            {
+                additionalNotes ? character.additionalNotes[0].map(note => <div key={note}>{note}</div>) : null
+            } 
+            <p>{character.backgroundFeature}</p>  
         </div>
     )
 }
