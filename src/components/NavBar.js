@@ -1,24 +1,15 @@
 import React from 'react'
 import UserForm from './UserForm'
-import Logo from './Logo.png'
 import {
   Button,
   Container,
-  Divider,
-  Grid,
-  Header,
-  Icon,
-  Image,
-  List,
   Menu,
-  Responsive,
   Segment,
-  Sidebar,
   Visibility,
 } from 'semantic-ui-react'
 
 
-const Navbar = ({ user, signUp, logIn, logOut }) => {
+const Navbar = ({ home, user, signUp, logIn, logOut }) => {
   return (
     <Visibility
       once={false}
@@ -30,8 +21,8 @@ const Navbar = ({ user, signUp, logIn, logOut }) => {
       >
         <Menu>
           <Container>
-            <Menu.Item>
-              <i class="d and d icon huge" /><h1>Bardic Inspiration</h1>
+            <Menu.Item onClick={home}>
+              <i className="d and d icon huge" /><h1>Bardic Inspiration</h1>
             </Menu.Item>
             <Menu.Item position='right'>
               {

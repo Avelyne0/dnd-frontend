@@ -5,10 +5,20 @@ import CharacterDetails from "./CharacterDetails";
 import { Card, Grid, Image, Segment, Button, Icon } from 'semantic-ui-react'
 
 
-export default function CharacterCard() {
+export default function CharacterCard({character}) {
   return (
     <Card className="ui center aligned card">
-          <div className="image">
+    <div>{character.name}</div>
+    <div>{character.age}</div>
+    <div>{character.race}</div>
+        </Card> 
+  )
+}
+
+
+
+
+{/* <div className="image">
             <img
               src={this.setCharacterImage()}
               alt="temp"
@@ -28,8 +38,4 @@ export default function CharacterCard() {
             <i className="d and d icon">
               {this.state.showDetails ? "Back" : "Show Details"}
             </i>
-          </div>
-        </Card> 
-  )
-}
-
+          </div> */}

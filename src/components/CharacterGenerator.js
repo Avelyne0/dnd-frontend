@@ -18,6 +18,10 @@ export default class CharacterGenerator extends Component {
   }
 
   componentDidMount() {
+    this.setCharacter()
+  }
+
+  setCharacter = () => {
     this.setCharacterName()
     this.setCharacterStatsRaceSkills()
     this.setCharacterAlignmentBackgroundDeity()
@@ -49,13 +53,13 @@ export default class CharacterGenerator extends Component {
 
     this.setState({
 
-        backgroundName: background.name,
-        backgroundFeature: background.backgroundFeature,
-        ideals: random(validIdeals),
-        bonds: random(background.bonds),
-        flaws: random(background.flaws),
-        personalityTraits: random(background.personalityTraits),
-        deity: random(filteredDeities)
+      backgroundName: background.name,
+      backgroundFeature: background.backgroundFeature,
+      ideals: random(validIdeals),
+      bonds: random(background.bonds),
+      flaws: random(background.flaws),
+      personalityTraits: random(background.personalityTraits),
+      deity: random(filteredDeities)
     })
   }
 
@@ -74,7 +78,6 @@ export default class CharacterGenerator extends Component {
       this.setState({ additionalNotes: [...this.state.additionalNotes, draconicAncestryName, draconicAncestryEffect] })
       skin = `${draconicAncestryName.toLocaleLowerCase().split(' ')[0]} scales`
     }
-    console.log(skin)
 
     const age = Math.floor(randomRange(race.ageRange))
     const weight = Math.floor(randomRange(race.weightRange)) + "lbs"
@@ -151,6 +154,11 @@ export default class CharacterGenerator extends Component {
   }
 
 
+  resetCharacter = () => {
+    this.setCharacter()
+  }
+
+
 
   changeOneStat = (key = "STR") => {
     this.setState({
@@ -161,10 +169,12 @@ export default class CharacterGenerator extends Component {
     })
   }
 
+
+
   render() {
     return (
-      <div centre>
-        <CharacterShow character={this.state} />
+      <div>
+        <CharacterShow resetCharacter={this.resetCharacter} character={this.state} />
       </div>
     )
   }

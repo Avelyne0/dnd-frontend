@@ -6,14 +6,18 @@ import Navbar from './components/NavBar.js';
 import API from './adapters/API';
 import { Route, Switch, Redirect } from 'react-router-dom'
 import CharacterShow from './components/CharacterShow';
-import { Container } from 'semantic-ui-react'
-
+import { Container, Card, Dropdown } from 'semantic-ui-react'
+import { generateCharacter } from './components/utils/characterGenerator'
+import CharacterCard from './components/CharacterCard';
+import { arrayTypeAnnotation } from '@babel/types';
 
 
 class App extends React.Component {
 
   state = {
-    user: null
+    user: null,
+    characters: Array.apply(null, Array(30)).map(() => generateCharacter()),
+    filterOption: ''
   }
 
   componentDidMount() {
@@ -59,6 +63,27 @@ class App extends React.Component {
       })
   }
 
+  characterIndexPage = (props) => {
+    const filteredCharacters = this.filterCharactersArray(this.state.characters, this.state.filterOption)
+    const characters = this.sortCharactersArray(filteredCharacters)
+    return (
+      <>
+        <Dropdown
+          onChange={this.onFilterChange}
+          placeholder='Select Race'
+          fluid
+          selection
+          options={["elf", "human", "dwarf"].map(race => ({key: race, text: race, value: race,}))}
+/>
+        <Card.Group>
+          {
+            characters.map(character => <CharacterCard character={character} />)
+          }
+        </Card.Group>
+      </>
+    )
+  }
+
   characterShowPage = (props) => {
     const selectedCharacter = this.state.characters.find(character => character.id === parseInt(props.match.params.id))
     if (!selectedCharacter) return <div>Loading character</div>
@@ -67,20 +92,32 @@ class App extends React.Component {
     return <CharacterShow {...props} back={() => this.setState({ selectedCharacter: null })} {...selectedCharacter} />
   }
 
+  sortCharactersArray = (array) => array.sort((charA, charB) => charB.age - charA.age)
+
+  filterCharactersArray = (array, filterOption) => {
+    return array.filter(character => (character.race.toLocaleLowerCase().includes(filterOption.toLocaleLowerCase())))
+  }
+
+  onFilterChange = (event, { value }) => {
+    console.log(value)
+    this.setState({filterOption: value})
+  }
+
   render() {
     return (
       <div className="App">
-
-
-        <Navbar user={this.state.user} signUp={this.signUp} logIn={this.logIn} logOut={this.logOut} />
-<Container>
-        {
-          this.state.user &&
-          <CharacterGenerator submit={this.submitCharacter} />
-        }
-        <Switch>
-          <Route path={["/characters/:id"]} exact component={this.characterShowPage} />
-        </Switch>
+        <Navbar user={this.state.user} home={this.goHome} signUp={this.signUp} logIn={this.logIn} logOut={this.logOut} />
+        <Container>
+          <Switch>
+            <Route path={["/"]} exact component={() => <>
+              {
+                this.state.user &&
+                <CharacterGenerator submit={this.submitCharacter} />
+              }
+            </>} />
+            <Route path={["/characters/"]} exact component={this.characterIndexPage} />
+            <Route path={["/characters/:id"]} exact component={this.characterShowPage} />
+          </Switch>
         </Container>
       </div>
     );

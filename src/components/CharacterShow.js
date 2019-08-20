@@ -29,13 +29,13 @@ export default class CharacterShow extends Component {
 
   render() {
     let { character } = this.props;
-
-    console.log(this.props)
-
     return (
       <div>
         <Segment style={{ padding: '8em 0em' }} vertical>
-
+        <Button onClick={this.props.resetCharacter}>
+                  <Icon name='d and d' />
+                  Reset
+                </Button>
           <Grid container stackable>
             <Grid.Row>
               <Grid.Column width={8}>
@@ -53,13 +53,13 @@ export default class CharacterShow extends Component {
               <Grid.Column floated='right' width={6}>
                 <Image bordered rounded size='large' src={this.setCharacterImage()} />
                 <Segment style={{ padding: '1em 0em' }} vertical>
-                <Button.Group size='huge' equal >
+                <Button.Group size='huge' >
                 <Button color='google plus' onClick={this.toggleShowDetails}>
-                  <Icon name='d and d icon' />
+                  <Icon name='d and d' />
                   {this.state.showDetails ? "Back" : "Show Details"}
                 </Button>
-                <Button danger >
-                  <Icon name='d and d icon' />
+                <Button>
+                  <Icon name='d and d' />
                   Save
                 </Button>
                 </Button.Group>
