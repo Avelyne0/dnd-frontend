@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Dropdown, Card } from 'semantic-ui-react'
+import { Card } from 'semantic-ui-react'
 import CharacterCard from '../components/CharacterCard'
 import CharacterFilter from '../components/CharacterFilter';
 import CharacterSort from '../components/CharacterSort';
@@ -39,21 +39,13 @@ export default class CharacterContainer extends Component {
           filterOptions={this.state.filterOptions}
         />
         <CharacterSort />
-        <Card.Group>
+        
+        <Card.Group itemsPerRow={6}>
           {
-            filteredCharacters.map(character => <CharacterCard key={character.name} character={character} />)
+            filteredCharacters.map(character => <CharacterCard key={character.id} character={character} />)
           }
         </Card.Group>
       </>
     )
   }
 }
-
-
-{/* <Dropdown
-          onChange={onFilterChange}
-          placeholder='Select Race'
-          fluid
-          selection
-          options={["elf", "human", "dwarf"].map(race => ({ key: race, text: race, value: race, }))}
-        /> */}

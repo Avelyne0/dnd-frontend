@@ -1,5 +1,10 @@
-// const endpoint = 'http://localhost:3000/api/v1'
-const endpoint = 'https://bardic-inspiration-backend.herokuapp.com/api/v1'
+let endpoint = null
+if (window.location.href.includes('heroku')) {
+    endpoint = 'https://bardic-inspiration-backend.herokuapp.com/api/v1';
+} else {
+    endpoint = 'http://localhost:3000/api/v1'
+}
+
 const signupUrl = `${endpoint}/users`
 const loginUrl = `${endpoint}/login`
 const charactersUrl = `${endpoint}/characters`
@@ -60,7 +65,7 @@ const validateUser = () => {
         .catch(handleServerError)
 }
 
-const postCharacter = (character, user) => fetch(charactersUrl, {
+const postCharacter = (character) => fetch(charactersUrl, {
     method: 'POST',
     body: JSON.stringify({
         name: character.name,
@@ -80,12 +85,12 @@ const postCharacter = (character, user) => fetch(charactersUrl, {
         char_class: character.charClass,
         gender: character.gender,
         race: character.race,
-        strength: character.STR,
-        dexterity: character.DEX,
-        constitution: character.CON,
-        intelligence: character.INT,
-        wisdom: character.WIS,
-        charisma: character.CHA,
+        STR: character.STR,
+        DEX: character.DEX,
+        CON: character.CON,
+        INT: character.INT,
+        WIS: character.WIS,
+        CHA: character.CHA,
         img_url: character.img_url
     }),
     headers: constructHeaders({
@@ -99,6 +104,9 @@ const deleteCharacter = id => fetch(`${charactersUrl}/${id}`, {
     method: 'DELETE'
 })
 
+
+const getCharacter = id => fetch(`${charactersUrl}/${id}`).then(jsonify)
+
 const getCharacters = () => fetch(charactersUrl).then(jsonify)
 
 const clearToken = () => localStorage.removeItem('token')
@@ -109,6 +117,7 @@ export default {
     validateUser,
     clearToken,
     postCharacter,
+    getCharacter,
     getCharacters,
     deleteCharacter
 }

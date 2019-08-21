@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Grid, Image, Segment, Button, Icon } from 'semantic-ui-react'
+import { Card, Image, Button } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 
 export default function CharacterCard({ character }) {
@@ -18,35 +18,12 @@ export default function CharacterCard({ character }) {
         {character.race}
       </Card.Description>
       <Button as={Link}
-                to={'/characters/' + character.id}/>
+                to={'/characters/' + character.id}>
+Show More
+                </Button>
       </Card.Content>
     </Card>
 
 
   )
 }
-
-
-
-
-{/* <div className="image">
-            <img
-              src={this.setCharacterImage()}
-              alt="temp"
-            />
-          </div>
-          <div className="content">
-            <h4 className="header">{character.name}</h4>
-            <div className="description">
-              {this.state.showDetails ? (
-                <CharacterDetails character={character} />
-              ) : (
-                  <CharacterMain character={character} />
-                )}
-            </div>
-          </div>
-          <div className="extra content" onClick={this.toggleShowDetails}>
-            <i className="d and d icon">
-              {this.state.showDetails ? "Back" : "Show Details"}
-            </i>
-          </div> */}

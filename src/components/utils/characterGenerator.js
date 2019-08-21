@@ -99,7 +99,7 @@ const setCharacterStatsRaceSkills = () => {
   const eyes = random(data.physicalCharacteristics[0].eyes)
 
   updateChar({ race: race.name })
-  const raceStats = race.abilityScore // TO DO
+  // const raceStats = race.abilityScore // TO DO
   var STR = rollAttribute()
   var DEX = rollAttribute()
   var CON = rollAttribute()
@@ -118,7 +118,6 @@ const setCharacterStatsRaceSkills = () => {
   const strSkillBonus = strBonus + char.Proficiency;
   const dexBonus = Math.floor((DEX - 10) / 2);
   const dexSkillBonus = dexBonus + char.Proficiency;
-  const conBonus = Math.floor((CON - 10) / 2);
   const intBonus = Math.floor((INT - 10) / 2);
   const intSkillBonus = intBonus + char.Proficiency;
   const wisBonus = Math.floor((WIS - 10) / 2);

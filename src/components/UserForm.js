@@ -31,15 +31,3 @@ const SignupForm = ({ submit, header }) => {
 
 export default SignupForm
 
-
-{/* <form onSubmit={e => {
-  e.preventDefault();
-  submit({ email, password })
-  setEmail('')
-  setPassword('')
-}}>
-  <span>{header}</span>
-  <input placeholder="Email" type="email" name="email" value={email} onChange={e => setEmail(e.target.value)} />
-  <input placeholder="Password" type="password" name="password" value={password} onChange={e => setPassword(e.target.value)} />
-  <input type="submit" />
-</form> */}
