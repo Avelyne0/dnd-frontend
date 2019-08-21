@@ -80,9 +80,9 @@ class App extends React.Component {
   characterShowPage = (props) => {
     const selectedCharacter = this.state.characters.find(character => character.id === parseInt(props.match.params.id))
     if (!selectedCharacter) return <div>Loading Character</div>
-    if (!this.state.user) return <Redirect to="/login" />
+    if (!this.state.user) return <Redirect to="/" />
 
-    return <CharacterShowContainer {...props} deleteCharacter={() => this.deleteCharacter(selectedCharacter.id)} {...selectedCharacter} />
+    return <CharacterShowContainer {...props} deleteCharacter={() => this.deleteCharacter(selectedCharacter.id)} user={this.state.user} {...selectedCharacter} />
   }
 
 
@@ -106,7 +106,7 @@ class App extends React.Component {
             <Route path={["/random"]} exact component={() => <>
               {
                 this.state.user &&
-                <CharacterGenerator submit={this.submitCharacter} />
+                <CharacterGenerator user={this.state.user} submit={this.submitCharacter} />
               }
             </>} />
             <Route path={["/characters/"]} exact component={this.characterIndexPage} />

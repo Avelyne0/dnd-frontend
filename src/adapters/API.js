@@ -104,7 +104,6 @@ const deleteCharacter = id => fetch(`${charactersUrl}/${id}`, {
     method: 'DELETE'
 })
 
-
 const getCharacter = id => fetch(`${charactersUrl}/${id}`).then(jsonify)
 
 const getCharacters = () => fetch(charactersUrl).then(jsonify)

@@ -26,8 +26,8 @@ export default function Footer() {
               </List>
             </Grid.Column>
             <Grid.Column width={7}>
-              <Header as='h4' inverted content='Pssst!'/>
-               <p>"{generateWhisper().toLocaleUpperCase()}"</p>
+              <Header as='h4' content='Pssst!'/>
+              <p>"{generateWhisper().toLocaleUpperCase()}"</p>
             </Grid.Column>
           </Grid.Row>
         </Grid>
