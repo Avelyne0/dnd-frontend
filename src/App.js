@@ -99,7 +99,6 @@ class App extends React.Component {
           <Switch>
             <Route path={["/"]} exact component={() => <>
               {
-                this.state.user &&
                 <LandingPage user={this.state.user} signUp={this.signUp} logIn={this.logIn}/>
               }
             </>} />
