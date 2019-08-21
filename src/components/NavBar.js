@@ -1,46 +1,45 @@
 import React from 'react'
 import {
   Button,
-  Container,
   Menu,
   Segment,
-  Visibility
+  Header,
+  Icon
 } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 
 
 const Navbar = ({ home, user, logOut }) => {
   return (
-    <Visibility
-      once={false}
+
+    <Segment
+      inverted
+      vertical
     >
-      <Segment
-        inverted
-        textAlign='center'
-        vertical
-      >
-        <Menu>
-          <Container>
-            <Menu.Item onClick={home  }>
-              <i className="d and d icon huge" /><h1>Bardic Inspiration</h1>
+      <Menu>
+
+        <Menu.Item onClick={home}>
+          <Header as='h1' textAlign='bottom'><Icon huge name="d and d icon" />Bardic Inspiration</Header>
+        </Menu.Item>
+        {
+          user ? <>
+            <Menu.Item
+              as={Link}
+              to='/characters/'
+            >
+              <Header as='h4' textAlign='bottom'>
+                All Characters
+                  </Header>
             </Menu.Item>
-            {
-              user ? <>
-                <Menu.Item 
-                as={Link}
-                to='/characters/'
-                >
-                  All Characters
-                </Menu.Item>
-                <Menu.Item position='right'>
-                  <Button color='google plus' onClick={logOut}>Log out</Button>
-                </Menu.Item>
-              </> : null
-            }
-          </Container>
-        </Menu>
-      </Segment>
-    </Visibility>
+            <Menu.Item position='right'>
+              <Button color='google plus' onClick={logOut}>Log out</Button>
+            </Menu.Item>
+          </> : null
+        }
+
+      </Menu>
+    </Segment>
+
   )
 }
 

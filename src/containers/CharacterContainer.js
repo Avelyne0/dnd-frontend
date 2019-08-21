@@ -35,7 +35,7 @@ export default class CharacterContainer extends Component {
           filterOption={this.state.filterOption}
           filterOptions={this.state.filterOptions}
         />
-        <Card.Group itemsPerRow={6}>
+        <Card.Group centered>
           {
             filteredCharacters.map(character => <CharacterCard key={character.id} character={character} />)
           }
