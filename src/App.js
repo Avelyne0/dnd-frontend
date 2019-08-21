@@ -9,12 +9,14 @@ import { Container } from "semantic-ui-react";
 import CharacterContainer from "./containers/CharacterContainer";
 import CharacterShowContainer from "./containers/CharacterShowContainer";
 import LandingPage from "./components/LandingPage";
+import Search from "./components/Search";
 
 class App extends React.Component {
   state = {
     user: null,
     characters: [],
     selectedCharacter: null,
+    searchTerm: '',
     // characters: Array.apply(null, Array(30)).map(() => generateCharacter()),
     filterOption: "",
     filterOptions: [
@@ -108,7 +110,7 @@ class App extends React.Component {
 
   characterIndexPage = props => {
     const filteredCharacters = this.filterCharactersArray(
-      this.state.characters,
+      this.filterCharacterBySearchTerm(),
       this.state.filterOption
     );
     const sortedCharacters = this.sortCharactersArray(filteredCharacters);
@@ -155,6 +157,16 @@ class App extends React.Component {
       .then(this.props.history.push("/characters"));
   };
 
+  changeSearchTerm = (event) => {
+    this.setState({ searchTerm: event.target.value })
+  }
+
+  filterCharacterBySearchTerm = () => {
+    return this.state.characters.filter(char => {
+      return char.name.toLowerCase().includes(this.state.searchTerm.toLowerCase())
+    })
+  }
+
   render() {
     return (
       <div className="App">
@@ -164,7 +176,8 @@ class App extends React.Component {
           signUp={this.signUp}
           logIn={this.logIn}
           logOut={this.logOut}
-        />
+        /><br />
+        <Search handleChange={this.changeSearchTerm} searchTerm={this.state.searchTerm}/>
         <br />
         <Container>
           <Switch>

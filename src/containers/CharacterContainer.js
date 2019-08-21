@@ -7,7 +7,6 @@ import CharacterSort from "../components/CharacterSort";
 export default class CharacterContainer extends Component {
   state = {
     selectedCharacter: null
-    
   };
 
   // filterCharactersArray = (array, filterOption) => {
