@@ -1,5 +1,8 @@
 import React, { Component } from "react";
-import { Dimmer, Container, Loader, Grid, Image, Segment, Button, Icon } from 'semantic-ui-react'
+import { Dimmer, Container, Loader, Grid, Image, Segment, Button, Icon, Header } from 'semantic-ui-react'
+import CharacterMain from "./CharacterMain";
+import CharacterDetails from "./CharacterDetails";
+
 
 export default class CharacterShow extends Component {
   state = {
@@ -32,13 +35,10 @@ export default class CharacterShow extends Component {
             <Grid.Row>
               <Grid.Column width={8}>
                 <div className="content">
-                  <h4 className="header">{character.name}</h4>
-                  <div className="description">
-                    {this.state.showDetails ? 
-                    <CharacterDetails character={character}/>
-                       : <CharacterMain character={character}/>
-                    }
-                  </div>
+                  <Container text>
+                  <Header as='h2'>{character.name}</Header>
+                    {this.state.showDetails ? <CharacterDetails character={character}/> : <CharacterMain character={character}/>}
+                  </Container>
                 </div>
               </Grid.Column>
               <Grid.Column floated='right' width={6}>
