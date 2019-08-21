@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import CharacterMain from "./CharacterMain";
-import CharacterDetails from "./CharacterDetails";
-import { Grid, Image, Segment, Button, Icon } from 'semantic-ui-react'
+import { Dimmer, Container, Loader, Grid, Image, Segment, Button, Icon } from 'semantic-ui-react'
 
 export default class CharacterShow extends Component {
   state = {
@@ -13,10 +11,19 @@ export default class CharacterShow extends Component {
   };
 
   render() {
+
+    if (this.props.loading) {
+      return <Container>
+        <Dimmer active inverted>
+          <Loader inverted content='Loading' />
+        </Dimmer>
+      </Container>
+    }
+
     let { character } = this.props;
     return (
       <div>
-        <Segment style={{ padding: '8em 0em' }} vertical>
+        <Segment style={{ padding: '4em 0em' }} vertical>
           <Button onClick={this.props.resetCharacter}>
             <Icon name='d and d' />
             Reset

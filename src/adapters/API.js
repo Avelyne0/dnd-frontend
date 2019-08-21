@@ -1,4 +1,5 @@
-const endpoint = 'http://localhost:3000/api/v1'
+// const endpoint = 'http://localhost:3000/api/v1'
+const endpoint = 'https://bardic-inspiration-backend.herokuapp.com/api/v1'
 const signupUrl = `${endpoint}/users`
 const loginUrl = `${endpoint}/login`
 const charactersUrl = `${endpoint}/characters`
@@ -61,38 +62,42 @@ const validateUser = () => {
 
 const postCharacter = (character, user) => fetch(charactersUrl, {
     method: 'POST',
-    body: JSON.stringify({ 
-    name: character.name,
-    age: character.age,
-    eyes: character.eyes,
-    height: character.height,
-    skin: character.skin,
-    weight: character.weight,
-    alignment: character.alignment,
-    background: character.backgroundName,
-    background_feature: character.backgroundFeature,
-    bonds: character.bonds,
-    deity: character.deity,
-    flaws: character.flaws,
-    ideals: character.ideals,
-    personality_traits: character.personalityTraits,
-    char_class: character.charClass,
-    gender: character.gender,
-    race: character.race,
-    strength: character.STR,
-    dexterity: character.DEX,
-    constitution: character.CON,
-    intelligence: character.INT,
-    wisdom: character.WIS,
-    charisma: character.CHA,
-    img_url: character.img_url
-     }),
+    body: JSON.stringify({
+        name: character.name,
+        age: character.age,
+        eyes: character.eyes,
+        height: character.height,
+        skin: character.skin,
+        weight: character.weight,
+        alignment: character.alignment,
+        background: character.backgroundName,
+        background_feature: character.backgroundFeature,
+        bonds: character.bonds,
+        deity: character.deity,
+        flaws: character.flaws,
+        ideals: character.ideals,
+        personality_traits: character.personalityTraits,
+        char_class: character.charClass,
+        gender: character.gender,
+        race: character.race,
+        strength: character.STR,
+        dexterity: character.DEX,
+        constitution: character.CON,
+        intelligence: character.INT,
+        wisdom: character.WIS,
+        charisma: character.CHA,
+        img_url: character.img_url
+    }),
     headers: constructHeaders({
         'Content-Type': 'application/json',
         'Accept': 'application/json'
     })
 }).then(jsonify)
     .catch(handleServerError)
+
+const deleteCharacter = id => fetch(`${charactersUrl}/${id}`, {
+    method: 'DELETE'
+})
 
 const getCharacters = () => fetch(charactersUrl).then(jsonify)
 
@@ -104,5 +109,6 @@ export default {
     validateUser,
     clearToken,
     postCharacter,
-    getCharacters
+    getCharacters,
+    deleteCharacter
 }
