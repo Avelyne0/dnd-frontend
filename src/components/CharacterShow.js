@@ -8,7 +8,7 @@ export default class CharacterShow extends Component {
   };
 
   toggleShowDetails = () => {
-    this.setState({ showDetails: !this.state.showDetails });
+    this.setState({ showDetails: !this.state.showDetails })
   };
 
 
@@ -24,6 +24,7 @@ export default class CharacterShow extends Component {
     }
 
     let { character } = this.props;
+
     return (
       <div>
         <Segment style={{ padding: '4em 0em' }} vertical>
@@ -70,14 +71,16 @@ export default class CharacterShow extends Component {
                         </tbody>
                       </table>
                       {
-                        Object.values(character.additionalNotes)[0].map(note => <div key={note}><div> {note}<br /></div></div>)
+                        character.additional_notes
+                        ? Object.values(character.additional_notes)[0].map(note => <div key={note}><div> {note}<br /></div></div>)
+                        : null
                       }
-                      <p>{character.backgroundFeature}</p>
+                      <p>{character.background_feature}</p>
                     </div>
                       :
                       <div>
                         <p>Gender: {character.gender}</p>
-                        <p>Class: {character.charClass}</p>
+                        <p>Class: {character.char_class}</p>
                         <p>Race: {character.race}</p>
                         <p>Age: {character.age}</p>
                         <p>Height: {character.height}</p>
@@ -85,11 +88,11 @@ export default class CharacterShow extends Component {
                         <p>Eyes: {character.eyes}</p>
                         <p>Skin: {character.skin}</p>
                         <p>Alignment: {character.alignment}</p>
-                        <p>Background: {character.backgroundName}</p>
+                        <p>Background: {character.background}</p>
                         <p>Flaws: {character.flaws}</p>
                         <p>Bonds: {character.bonds}</p>
                         <p>Ideals: {character.ideals}</p>
-                        <p>Personality traits: {character.personalityTraits}</p>
+                        <p>Personality traits: {character.personality_traits}</p>
                       </div>
                     }
                   </Container>

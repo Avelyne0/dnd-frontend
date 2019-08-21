@@ -38,7 +38,7 @@ const characters = [
       Stealth: null,
       Survival: null,
     },
-    additionalNotes: []
+    additional_notes: []
 
   }
 ]

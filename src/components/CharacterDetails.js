@@ -33,9 +33,9 @@ const CharacterDetails = ({ character }) => {
                 </tbody>
             </table>
             {
-                Object.values(character.additionalNotes)[0].map(note => <div key={note}><div> {note}<br /></div></div>)
+                Object.values(character.additional_notes)[0].map(note => <div key={note}><div> {note}<br /></div></div>)
             }
-            <p>{character.backgroundFeature}</p>
+            <p>{character.background_feature}</p>
         </div>
     )
 }

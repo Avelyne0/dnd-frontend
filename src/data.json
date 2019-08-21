@@ -647,7 +647,7 @@
             "hair": null
           }
         ],
-        "additionalNotes": [
+        "additional_notes": [
           "Damage Resistance: You have resistance to the damage type associated with your draconic ancestry.",
           "Breath Weapon: You can use your action to exhale destructive energy. Your draconic ancestry determines the size, shape, and damage type of the exhalation. When you use your breath weapon, each creature in the area of the exhalation must make a saving throw, the type of which is determined by your draconic ancestry. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level, and 5d6 at 16th level. After you use your breath weapon, you can’t use it again until you complete a short or long rest."
         ],
@@ -680,7 +680,7 @@
           },
           { "hair": [] }
         ],
-        "additionalNotes": [
+        "additional_notes": [
           "Darkvision: Accustomed to life underground, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray.",
           "Dwarven Resilience: You have advantage on saving throws against poison, and you have resistance against poison damage.",
           "Stonecunning: Whenever you make an Intelligence (History) check related to the origin of stonework, you are considered proficient in the History skill and add double your proficiency bonus to the check, instead of your normal proficiency bonus.",
@@ -715,7 +715,7 @@
           },
           { "hair": [] }
         ],
-        "additionalNotes": [
+        "additional_notes": [
           "Darkvision: Accustomed to life underground, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray.",
           "Dwarven Resilience: You have advantage on saving throws against poison, and you have resistance against poison damage.",
           "Stonecunning: Whenever you make an Intelligence (History) check related to the origin of stonework, you are considered proficient in the History skill and add double your proficiency bonus to the check, instead of your normal proficiency bonus."
@@ -749,7 +749,7 @@
           },
           { "hair": [] }
         ],
-        "additionalNotes": [
+        "additional_notes": [
           "Darkvision: Accustomed to twilit forests and the night sky, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray.",
           "Keen Senses: you have proficiency in the Perception Skill",
           "Fey Ancestry: you have advantage on saving throws against being charmed, and magic can’t put you to sleep.",
@@ -785,7 +785,7 @@
           },
           { "hair": [] }
         ],
-        "additionalNotes": [
+        "additional_notes": [
           "Darkvision: Accustomed to twilit forests and the night sky, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray.",
           "Keen Senses; you have proficiency in the Perception Skill",
           "Fey Ancestry; you have advantage on saving throws against being charmed, and magic can’t put you to sleep.",
@@ -821,7 +821,7 @@
           },
           { "hair": [] }
         ],
-        "additionalNotes": [
+        "additional_notes": [
           "Darkvision: Accustomed to twilit forests and the night sky, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray.",
           "Keen Senses; you have proficiency in the Perception Skill",
           "Fey Ancestry; you have advantage on saving throws against being charmed, and magic can’t put you to sleep.",
@@ -844,7 +844,7 @@
           { "skin": ["light blue"] },
           { "hair": ["light blue"] }
         ],
-        "additionalNotes": [
+        "additional_notes": [
           "Unending Breath: You can hold your breath indefinitely while you’re not incapacitated.",
           "Mingle with the Wind: You can cast the levitate spell once with this trait, requiring no material components, and you regain the ability to cast it this way when you finish a long rest. Constitution is your spellcasting ability for this spell."
         ],
@@ -881,7 +881,7 @@
           },
           { "hair": [] }
         ],
-        "additionalNotes": [
+        "additional_notes": [
           "Earth Walk: You can move across difficult terrain made of earth or stone without expending extra movement.",
           "Merge with Stone: You can cast the pass without trace spell once with this trait, requiring no material components, and you regain the ability to cast it this way when you finish a long rest. Constitution is your spellcasting ability for this spell."
         ],
@@ -914,7 +914,7 @@
           },
           { "hair": ["red"] }
         ],
-        "additionalNotes": [
+        "additional_notes": [
           "Darkvision: You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. Your ties to the Elemental Plane of Fire make your darkvision unusual: everything you see in darkness is in a shade of red.",
           "Fire Resistance: You have resistance to fire damage.",
           "Reach to the Blaze: You know the produce flame cantrip. Once you reach 3rd level, you can cast the burning hands spell once with this trait as a 1st-level spell, and you regain the ability to cast it this way when you finish a long rest. Constitution is your spellcasting ability for these spells."
@@ -948,7 +948,7 @@
           },
           { "hair": [] }
         ],
-        "additionalNotes": [
+        "additional_notes": [
           "Acid Resistance: You have resistance to acid damage.",
           "Amphibious: You can breathe air and water.",
           "Swim: You have a swimming speed of 30 feet.",
@@ -983,7 +983,7 @@
           },
           { "hair": [] }
         ],
-        "additionalNotes": [
+        "additional_notes": [
           "Darkvision: Accustomed to life underground, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray.",
           "Superior Darkvision: Your darkvision has a radius of 120 feet.",
           "Gnome Cunning: You have advantage on all Intelligence, Wisdom, and Charisma saving throws against magic.",
@@ -1018,7 +1018,7 @@
           },
           { "hair": [] }
         ],
-        "additionalNotes": [
+        "additional_notes": [
           "Darkvision: Accustomed to life underground, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray.",
           "Gnome Cunning: You have advantage on all Intelligence, Wisdom, and Charisma saving throws against magic.",
           "Artificer’s Lore: Whenever you make an Intelligence (History) check related to magic items, alchemical objects, or technological devices, you can add twice your proficiency bonus, instead of any proficiency bonus you normally apply."
@@ -1049,7 +1049,7 @@
           },
           { "hair": [] }
         ],
-        "additionalNotes": [
+        "additional_notes": [
           "Natural Athlete: You have proficiency in the Athletics skill.",
           "Stone’s Endurance: You can focus yourself to occasionally shrug off injury. When you take damage, you can use your reaction to roll a d12. Add your Constitution modifier to the number rolled, and reduce the damage by that total. After you use this trait, you can’t use it again until you finish a short or long rest.",
           "Powerful Build: You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift.",
@@ -1084,7 +1084,7 @@
           },
           { "hair": [] }
         ],
-        "additionalNotes": [
+        "additional_notes": [
           "Darkvision: Thanks to your elf blood, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray.",
           "Fey Ancestry: you have advantage on saving throws against being charmed, and magic can’t put you to sleep.",
           "Skill Versatility: You gain proficiency in two skills of your choice."
@@ -1102,7 +1102,7 @@
         "speed": 30,
         "abilityScore": [{ "STR": 2 }, { "CON": 1 }],
         "physicalCharacteristics": [{ "skin": [] }, { "hair": [] }],
-        "additionalNotes": [
+        "additional_notes": [
           "Darkvision: Thanks to your orc blood, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray.",
           "Menacing: You gain proficiency in the Intimidation skill.",
           "Relentless Endurance: When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. You can’t use this feature again until you finish a long rest.",
@@ -1137,7 +1137,7 @@
           },
           { "hair": [] }
         ],
-        "additionalNotes": [
+        "additional_notes": [
           "Lucky: When you roll a 1 on the d20 for an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll.",
           "Brave: You have advantage on saving throws against being frightened.",
           "Halfling Nimbleness: You can move through the space of any creature that is of a size larger than yours.",
@@ -1172,7 +1172,7 @@
           },
           { "hair": [] }
         ],
-        "additionalNotes": [
+        "additional_notes": [
           "Lucky: When you roll a 1 on the d20 for an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll.",
           "Brave: You have advantage on saving throws against being frightened.",
           "Halfling Nimbleness: You can move through the space of any creature that is of a size larger than yours.",
@@ -1214,7 +1214,7 @@
           },
           { "hair": [] }
         ],
-        "additionalNotes": [],
+        "additional_notes": [],
         "summary": "Humans are the most adaptable and ambitious people among the common races. Whatever drives them, humans are the innovators, the achievers, and the pioneers of the worlds.",
         "detailedSummary": "In the reckonings of most worlds, humans are the youngest of the common races, late to arrive on the world scene and short-lived in comparison to dwarves, elves, and dragons. Perhaps it is because of their shorter lives that they strive to achieve as much as they can in the years they are given. Or maybe they feel they have something to prove to the elder races, and that’s why they build their mighty empires on the foundation of conquest and trade. Whatever drives them, humans are the innovators, the achievers, and the pioneers of the worlds."
       }
@@ -1251,7 +1251,7 @@
           },
           { "hair": [] }
         ],
-        "additionalNotes": [
+        "additional_notes": [
           "Darkvision: Thanks to your infernal heritage, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray.",
           "Hellish Resistance: You have resistance to fire damage.",
           "Infernal Legacy: You know the thaumaturgy cantrip. When you reach 3rd level, you can cast the hellish rebuke spell as a 2nd-level spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the darkness spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells."
@@ -1286,7 +1286,7 @@
           },
           { "hair": [] }
         ],
-        "additionalNotes": [
+        "additional_notes": [
           "Darkvision: Thanks to your celestial heritage, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray.",
           "Celestial Resistance: You have resistance to necrotic damage and radiant damage.",
           "Celestial Legacy: You know the light cantrip. Once you reach 3rd level, you can cast the lesser restoration spell once with this trait, and you regain the ability to do so when you finish a long rest. Once you reach 5th level, you can cast the daylight spell once with this trait as a 3rd-level spell, and you regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells."
@@ -1349,8 +1349,8 @@
     {
       "acolyte": {
         "name": "Acolyte",
-        "backgroundFeature": "Shelter of the Faithful: As an acolyte, you command the respect of those who share your faith, and you can perform the religious ceremonies of your deity. You and your adventuring companions can expect to receive free healing and care at a temple, shrine, or other established presence of your faith, though you must provide any material components needed for spells. Those who share your religion will support you (but only you) at a modest lifestyle. You might also have ties to a specific temple dedicated to your chosen deity or pantheon, and you have a residence there. This could be the temple where you used to serve, if you remain on good terms with it, or a temple where you have found a new home. While near your temple, you can call upon the priests for assistance, provided the assistance you ask for is not hazardous and you remain in good standing with your temple.",
-        "personalityTraits": [
+        "background_feature": "Shelter of the Faithful: As an acolyte, you command the respect of those who share your faith, and you can perform the religious ceremonies of your deity. You and your adventuring companions can expect to receive free healing and care at a temple, shrine, or other established presence of your faith, though you must provide any material components needed for spells. Those who share your religion will support you (but only you) at a modest lifestyle. You might also have ties to a specific temple dedicated to your chosen deity or pantheon, and you have a residence there. This could be the temple where you used to serve, if you remain on good terms with it, or a temple where you have found a new home. While near your temple, you can call upon the priests for assistance, provided the assistance you ask for is not hazardous and you remain in good standing with your temple.",
+        "personality_traits": [
           "I idolize a particular hero of my faith, and constantly refer to that person’s deeds and example.",
           "I can find common ground between the fiercest enemies, empathizing with them and always working toward peace.",
           "I see omens in every event and action. The gods try to speak to us, we just need to listen.",
@@ -1421,8 +1421,8 @@
     {
       "criminalSpy": {
         "name": "Criminal / Spy",
-        "backgroundFeature": "Criminal Contact: You have a reliable and trustworthy contact who acts as your liaison to a network of other criminals. You know how to get messages to and from your contact, even over great distances; specifically, you know the local messengers, corrupt caravan masters, and seedy sailors who can deliver messages for you.",
-        "personalityTraits": [
+        "background_feature": "Criminal Contact: You have a reliable and trustworthy contact who acts as your liaison to a network of other criminals. You know how to get messages to and from your contact, even over great distances; specifically, you know the local messengers, corrupt caravan masters, and seedy sailors who can deliver messages for you.",
+        "personality_traits": [
           "I always have a plan for what to do when things go wrong.",
           "I am always calm, no matter what the situation. I never raise my voice or let my emotions control me.",
           "The first thing I do in a new place is note the locations of everything valuable—or where such things could be hidden.",
@@ -1492,8 +1492,8 @@
     {
       "folkHero": {
         "name": "Folk Hero",
-        "backgroundFeature": "Rustic Hospitality: Since you come from the ranks of the common folk, you fit in among them with ease. You can find a place to hide, rest, or recuperate among other commoners, unless you have shown yourself to be a danger to them. They will shield you from the law or anyone else searching for you, though they will not risk their lives for you.",
-        "personalityTraits": [
+        "background_feature": "Rustic Hospitality: Since you come from the ranks of the common folk, you fit in among them with ease. You can find a place to hide, rest, or recuperate among other commoners, unless you have shown yourself to be a danger to them. They will shield you from the law or anyone else searching for you, though they will not risk their lives for you.",
+        "personality_traits": [
           "I judge people by their actions, not their words.",
           "If someone is in trouble, I’m always ready to lend help.",
           "When I set my mind to something, I follow through no matter what gets in my way.",
@@ -1563,8 +1563,8 @@
     {
       "hauntedOne": {
         "name": "Haunted One",
-        "backgroundFeature": "Heart of Darkness: Those who look into your eyes can see that you have faced unimaginable horror and that you are no stranger to darkness. Though they might fear you, commoners will extend you every courtesy and do their utmost to help you. Unless you have shown yourself to be a danger to them, they will even take up arms to fight alongside you, should you find yourself facing an enemy alone.",
-        "personalityTraits": [
+        "background_feature": "Heart of Darkness: Those who look into your eyes can see that you have faced unimaginable horror and that you are no stranger to darkness. Though they might fear you, commoners will extend you every courtesy and do their utmost to help you. Unless you have shown yourself to be a danger to them, they will even take up arms to fight alongside you, should you find yourself facing an enemy alone.",
+        "personality_traits": [
           "I don’t run from evil. Evil runs from me.",
           "I like to read and memorize poetry. It keeps me calm and brings me fleeting moments of happiness.",
           "I spend money freely and live life to the fullest, knowing that tomorrow I might die.",
@@ -1634,8 +1634,8 @@
     {
       "noble": {
         "name": "Noble",
-        "backgroundFeature": "Position of Privilege: Thanks to your noble birth, people are inclined to think the best of you. You are welcome in high society, and people assume you have the right to be wherever you are. The common folk make every effort to accommodate you and avoid your displeasure, and other people of high birth treat you as a member of the same social sphere. You can secure an audience with a local noble if you need to.",
-        "personalityTraits": [
+        "background_feature": "Position of Privilege: Thanks to your noble birth, people are inclined to think the best of you. You are welcome in high society, and people assume you have the right to be wherever you are. The common folk make every effort to accommodate you and avoid your displeasure, and other people of high birth treat you as a member of the same social sphere. You can secure an audience with a local noble if you need to.",
+        "personality_traits": [
           "My eloquent flattery makes everyone I talk to feel like the most wonderful and important person in the world.",
           "The common folk love me for my kindness and generosity.",
           "No one could doubt by looking at my regal bearing that I am a cut above the unwashed masses.",
@@ -1706,8 +1706,8 @@
     {
       "sage": {
         "name": "Sage",
-        "backgroundFeature": "Researcher: When you attempt to learn or recall a piece of lore, if you do not know that information, you often know where and from whom you can obtain it. Usually, this information comes from a library, scriptorium, university, or a sage or other learned person or creature. Your DM might rule that the knowledge you seek is secreted away in an almost inaccessible place, or that it simply cannot be found. Unearthing the deepest secrets of the multiverse can require an adventure or even a whole campaign.",
-        "personalityTraits": [
+        "background_feature": "Researcher: When you attempt to learn or recall a piece of lore, if you do not know that information, you often know where and from whom you can obtain it. Usually, this information comes from a library, scriptorium, university, or a sage or other learned person or creature. Your DM might rule that the knowledge you seek is secreted away in an almost inaccessible place, or that it simply cannot be found. Unearthing the deepest secrets of the multiverse can require an adventure or even a whole campaign.",
+        "personality_traits": [
           "I use polysyllabic words that convey the impression of great erudition.",
           "I’ve read every book in the world’s greatest libraries—or I like to boast that I have.",
           "I’m used to helping out those who aren’t as smart as I am, and I patiently explain anything and everything to others.",
@@ -1776,8 +1776,8 @@
     },
     {
       "soldier": {
-        "backgroundFeature": "Military Rank: You have a military rank from your career as a soldier. Soldiers loyal to your former military organization still recognize your authority and influence, and they defer to you if they are of a lower rank. You can invoke your rank to exert influence over other soldiers and requisition simple equipment or horses for temporary use. You can also usually gain access to friendly military encampments and fortresses where your rank is recognized.",
-        "personalityTraits": [
+        "background_feature": "Military Rank: You have a military rank from your career as a soldier. Soldiers loyal to your former military organization still recognize your authority and influence, and they defer to you if they are of a lower rank. You can invoke your rank to exert influence over other soldiers and requisition simple equipment or horses for temporary use. You can also usually gain access to friendly military encampments and fortresses where your rank is recognized.",
+        "personality_traits": [
           "I’m always polite and respectful.",
           "I’m haunted by memories of war. I can’t get the images of violence out of my mind.",
           "I’ve lost too many friends, and I’m slow to make new ones.",
