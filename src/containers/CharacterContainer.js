@@ -35,7 +35,7 @@ export default class CharacterContainer extends Component {
           filterOption={this.state.filterOption}
           filterOptions={this.state.filterOptions}
         />
-        <Card.Group>
+        <Card.Group itemsPerRow={6}>
           {
             filteredCharacters.map(character => <CharacterCard key={character.name} character={character} />)
           }
