@@ -8,6 +8,7 @@ import CharacterShow from './components/CharacterShow';
 import { Container } from 'semantic-ui-react'
 
 import CharacterContainer from './containers/CharacterContainer';
+import CharacterShowContainer from './containers/CharacterShowContainer';
 
 
 class App extends React.Component {
@@ -80,7 +81,7 @@ class App extends React.Component {
     if (!selectedCharacter) return <div>Loading Character</div>
     if (!this.state.user) return <Redirect to="/login" />
 
-    return <CharacterShow {...props} back={() => this.setState({ selectedCharacter: null })} {...selectedCharacter} />
+    return <CharacterShowContainer {...props} back={() => this.setState({ selectedCharacter: null })} {...selectedCharacter} />
   }
 
 
@@ -106,7 +107,7 @@ class App extends React.Component {
               }
             </>} />
             <Route path={["/characters/"]} exact component={this.characterIndexPage} />
-            <Route path={["/characters/:id"]} exact component={this.characterShowPage} />
+            <Route path={["/characters/:id"]} exact component={CharacterShowContainer} />
           </Switch>
         </Container>
       </div>

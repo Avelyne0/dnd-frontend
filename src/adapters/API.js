@@ -60,7 +60,7 @@ const validateUser = () => {
         .catch(handleServerError)
 }
 
-const postCharacter = (character, user) => fetch(charactersUrl, {
+const postCharacter = (character) => fetch(charactersUrl, {
     method: 'POST',
     body: JSON.stringify({
         name: character.name,
@@ -99,6 +99,8 @@ const deleteCharacter = id => fetch(`${charactersUrl}/${id}`, {
     method: 'DELETE'
 })
 
+const getCharacter = id => fetch(`${charactersUrl}/${id}`).then(jsonify)
+
 const getCharacters = () => fetch(charactersUrl).then(jsonify)
 
 const clearToken = () => localStorage.removeItem('token')
@@ -109,6 +111,7 @@ export default {
     validateUser,
     clearToken,
     postCharacter,
+    getCharacter,
     getCharacters,
     deleteCharacter
 }
