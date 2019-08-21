@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import { Dimmer, Container, Loader, Grid, Image, Segment, Button, Icon } from 'semantic-ui-react'
+import CharacterDetails from './CharacterDetails'
+import CharacterMain from './CharacterMain'
+
 
 export default class CharacterShow extends Component {
   state = {

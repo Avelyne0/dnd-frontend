@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Dropdown, Card } from 'semantic-ui-react'
 import CharacterCard from '../components/CharacterCard'
 import CharacterFilter from '../components/CharacterFilter';
+import CharacterSort from '../components/CharacterSort';
 
 export default class CharacterContainer extends Component {
   state = {
@@ -16,7 +17,9 @@ export default class CharacterContainer extends Component {
       'genasi',
       'halfling',
       'orc'
-    ]
+    ],
+    sortOption: '',
+    sortOptions: ['none', 'alphabetically', 'age']
   }
 
   filterCharactersArray = (array, filterOption) => {
@@ -35,6 +38,7 @@ export default class CharacterContainer extends Component {
           filterOption={this.state.filterOption}
           filterOptions={this.state.filterOptions}
         />
+        <CharacterSort />
         <Card.Group>
           {
             filteredCharacters.map(character => <CharacterCard key={character.name} character={character} />)
