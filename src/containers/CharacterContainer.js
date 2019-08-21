@@ -9,6 +9,7 @@ export default class CharacterContainer extends Component {
     selectedCharacter: null,
     filterOption: '',
     filterOptions: [
+      'all',
       'elf',
       'dwarf',
       'human',
@@ -19,10 +20,11 @@ export default class CharacterContainer extends Component {
       'orc'
     ],
     sortOption: '',
-    sortOptions: ['none', 'alphabetically', 'age']
+    sortOptions: ['alphabetically', 'age']
   }
 
   filterCharactersArray = (array, filterOption) => {
+    if (filterOption === "all") return array;
     return array.filter(character => (character.race.toLocaleLowerCase().includes(filterOption.toLocaleLowerCase())))
   }
 
