@@ -29,7 +29,7 @@ class App extends React.Component {
 
   postAuth = user => {
     if (user.error) {
-      alert(user.error)
+      console.log(user.error)
     } else {
       this.setState({ user })
     }
