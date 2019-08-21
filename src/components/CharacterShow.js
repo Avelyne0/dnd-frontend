@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import CharacterDetails from './CharacterDetails'
-import CharacterMain from './CharacterMain'
 import { Dimmer, Container, Loader, Grid, Image, Segment, Button, Icon, Header } from 'semantic-ui-react'
 
 

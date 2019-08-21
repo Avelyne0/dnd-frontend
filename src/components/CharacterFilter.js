@@ -4,7 +4,8 @@ import { Form, Button } from 'semantic-ui-react'
 export default function CharacterFilter({ filterOption, filterOptions, handleChange }) {
   return (
     <div>
-      <Form> <h4>Filter by: 
+      <Form>
+        <h4>Filter by: 
         <Button.Group>
           {
             filterOptions.map(race =>
@@ -17,12 +18,6 @@ export default function CharacterFilter({ filterOption, filterOptions, handleCha
           }
         </Button.Group>
         </h4>
-        {/* {
-          filterOption ?
-            <Form.Field>
-              Filtered By: <b>{filterOption}</b>
-            </Form.Field> : <Form.Field />
-        } */}
       </Form>
     </div>
   )
