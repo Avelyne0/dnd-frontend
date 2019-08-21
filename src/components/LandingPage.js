@@ -35,13 +35,13 @@ export default function LandingPage({ user, signUp, logIn }) {
           <Icon name='d and d' />Be Inspired!
         </Button>
       </> : <>
-          <Grid columns={3}>
-            <Grid.Column />
+          <Grid columns={2}>
             <Grid.Column>
                 <UserForm submit={signUp} header={'Sign up'} />
+            </Grid.Column>
+            <Grid.Column>
                 <UserForm submit={logIn} header={'Log in'} />
             </Grid.Column>
-            <Grid.Column />
           </Grid>
         </>
     }
