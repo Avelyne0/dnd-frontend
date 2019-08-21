@@ -56,7 +56,7 @@ class App extends React.Component {
 
   submitCharacter = (character) => {
     API.postCharacter(character, this.state.user)
-      .then(this.setState({ characters: [...this.state.characters, character] }))
+      .then(({character}) => this.setState({ characters: [...this.state.characters, character] }))
       .catch(errorPromise => {
         errorPromise
           .then(data => {
