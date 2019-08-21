@@ -1,11 +1,7 @@
 import React, { Component } from "react";
-<<<<<<< HEAD
-import { Dimmer, Container, Loader, Grid, Image, Segment, Button, Icon } from 'semantic-ui-react'
 import CharacterDetails from './CharacterDetails'
 import CharacterMain from './CharacterMain'
-=======
 import { Dimmer, Container, Loader, Grid, Image, Segment, Button, Icon, Header } from 'semantic-ui-react'
->>>>>>> 7d5fbccd547e68867211424fc5b708c02200a044
 
 
 export default class CharacterShow extends Component {
