@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Dimmer, Container, Loader, Grid, Image, Segment, Button, Icon, Header } from 'semantic-ui-react'
+import { Dimmer, Container, Loader, Grid, Image, Segment, Button, Icon, Header, Card } from 'semantic-ui-react'
 
 
 export default class CharacterShow extends Component {
@@ -35,11 +35,10 @@ export default class CharacterShow extends Component {
                 Reset
           </Button>
           }
-          <Grid container stackable>
+          <Grid container stackable verticalAlign='middle'>
             <Grid.Row>
               <Grid.Column width={8}>
-                <div className="content">
-                  <Container text>
+                  <Container fluid>
                     <Header as='h2'>{character.name}</Header>
                     {this.state.showDetails ? <div>
                       <Header as='h3'>Stats:</Header>
@@ -79,15 +78,14 @@ export default class CharacterShow extends Component {
                     </div>
                       :
                       <div>
-                        <p>Gender: {character.gender}</p>
-                        <p>Class: {character.char_class}</p>
-                        <p>Race: {character.race}</p>
+                        <Header as="h3">{character.gender} {character.race} {character.char_class}<br/>
+                        <Header.Subheader>{character.alignment}</Header.Subheader>
+                        </Header>
                         <p>Age: {character.age}</p>
                         <p>Height: {character.height}</p>
                         <p>Weight: {character.weight}</p>
                         <p>Eyes: {character.eyes}</p>
                         <p>Skin: {character.skin}</p>
-                        <p>Alignment: {character.alignment}</p>
                         <p>Background: {character.background}</p>
                         <p>Flaws: {character.flaws}</p>
                         <p>Bonds: {character.bonds}</p>
@@ -96,7 +94,6 @@ export default class CharacterShow extends Component {
                       </div>
                     }
                   </Container>
-                </div>
               </Grid.Column>
               <Grid.Column floated='right' width={6}>
                 <Image bordered rounded size='large' src={character.img_url} />

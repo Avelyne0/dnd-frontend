@@ -9,6 +9,7 @@ import { Container } from 'semantic-ui-react'
 import CharacterContainer from './containers/CharacterContainer';
 import CharacterShowContainer from './containers/CharacterShowContainer';
 import LandingPage from './components/LandingPage';
+import Footer from './components/Footer';
 
 
 class App extends React.Component {
@@ -112,6 +113,7 @@ class App extends React.Component {
             <Route path={["/characters/:id"]} exact component={this.characterShowPage} />
           </Switch>
         </Container>
+        <Footer/>
       </div>
     );
   }
