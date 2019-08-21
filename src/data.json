@@ -729,7 +729,7 @@
         "name": "Eladrin Elf",
         "ageRange": [100, 750],
         "heightRange": [5, 6],
-        "weightRange": [100, 250],
+        "weightRange": [100, 180],
         "speed": 30,
         "abilityScore": [{ "DEX": 2 }, { "INT": 1 }],
         "physicalCharacteristics": [
@@ -765,7 +765,7 @@
         "name": "High Elf",
         "ageRange": [100, 750],
         "heightRange": [5, 6],
-        "weightRange": [100, 250],
+        "weightRange": [100, 180],
         "speed": 30,
         "abilityScore": [{ "DEX": 2 }, { "INT": 1 }],
         "physicalCharacteristics": [
@@ -801,7 +801,7 @@
         "name": "Wood Elf",
         "ageRange": [100, 750],
         "heightRange": [5, 6],
-        "weightRange": [100, 250],
+        "weightRange": [100, 180],
         "speed": 35,
         "abilityScore": [{ "DEX": 2 }, { "WIS": 1 }],
         "physicalCharacteristics": [
@@ -1064,7 +1064,7 @@
         "name": "Half-Elf",
         "ageRange": [20, 180],
         "heightRange": [5, 6],
-        "weightRange": [],
+        "weightRange": [100, 180],
         "speed": 30,
         "abilityScore": [{ "CHA": 2 }, { "": 1 }, { "": 1 }],
         "physicalCharacteristics": [
