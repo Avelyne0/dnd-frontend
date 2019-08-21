@@ -1,5 +1,5 @@
-const endpoint = 'http://localhost:3000/api/v1'
-// const endpoint = 'https://bardic-inspiration-backend.herokuapp.com/api/v1'
+// const endpoint = 'http://localhost:3000/api/v1'
+const endpoint = 'https://bardic-inspiration-backend.herokuapp.com/api/v1'
 const signupUrl = `${endpoint}/users`
 const loginUrl = `${endpoint}/login`
 const charactersUrl = `${endpoint}/characters`
