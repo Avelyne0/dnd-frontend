@@ -1,10 +1,10 @@
 let endpoint = null
 if (window.location.href.includes('heroku')) {
     endpoint = 'https://bardic-inspiration-backend.herokuapp.com/api/v1';
-  } else {
+} else {
     endpoint = 'http://localhost:3000/api/v1'
-  }
-  
+}
+
 const signupUrl = `${endpoint}/users`
 const loginUrl = `${endpoint}/login`
 const charactersUrl = `${endpoint}/characters`
@@ -85,12 +85,12 @@ const postCharacter = (character) => fetch(charactersUrl, {
         char_class: character.charClass,
         gender: character.gender,
         race: character.race,
-        strength: character.STR,
-        dexterity: character.DEX,
-        constitution: character.CON,
-        intelligence: character.INT,
-        wisdom: character.WIS,
-        charisma: character.CHA,
+        STR: character.STR,
+        DEX: character.DEX,
+        CON: character.CON,
+        INT: character.INT,
+        WIS: character.WIS,
+        CHA: character.CHA,
         img_url: character.img_url
     }),
     headers: constructHeaders({
@@ -103,6 +103,7 @@ const postCharacter = (character) => fetch(charactersUrl, {
 const deleteCharacter = id => fetch(`${charactersUrl}/${id}`, {
     method: 'DELETE'
 })
+
 
 const getCharacter = id => fetch(`${charactersUrl}/${id}`).then(jsonify)
 

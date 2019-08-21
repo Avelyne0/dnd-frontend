@@ -4,11 +4,11 @@ import './App.css';
 import Navbar from './components/NavBar.js';
 import API from './adapters/API';
 import { Route, Switch, Redirect } from 'react-router-dom'
-import CharacterShow from './components/CharacterShow';
 import { Container } from 'semantic-ui-react'
 
 import CharacterContainer from './containers/CharacterContainer';
 import CharacterShowContainer from './containers/CharacterShowContainer';
+import LandingPage from './components/LandingPage';
 
 
 class App extends React.Component {
@@ -56,7 +56,7 @@ class App extends React.Component {
 
   submitCharacter = (character) => {
     API.postCharacter(character, this.state.user)
-      .then(({character}) => this.setState({ characters: [...this.state.characters, character] }))
+      .then(({ character }) => this.setState({ characters: [...this.state.characters, character] }))
       .catch(errorPromise => {
         errorPromise
           .then(data => {
@@ -81,17 +81,14 @@ class App extends React.Component {
     if (!selectedCharacter) return <div>Loading Character</div>
     if (!this.state.user) return <Redirect to="/login" />
 
-    return <CharacterShowContainer {...props} back={() => this.setState({ selectedCharacter: null })} {...selectedCharacter} />
+    return <CharacterShowContainer {...props} deleteCharacter={() => this.deleteCharacter(selectedCharacter.id)} {...selectedCharacter} />
   }
 
 
-
-
-  deleteCharacter = id => {
+  deleteCharacter = (id) => {
     API.deleteCharacter(id)
-      .then(this.setState({
-        characters: this.state.characters.filter(character => character.id !== id)
-      }))
+    .then(this.setState({characters: this.state.characters.filter(character => character.id !== id)}))
+    .then(this.props.history.push('/characters'))
   }
 
   render() {
@@ -103,11 +100,17 @@ class App extends React.Component {
             <Route path={["/"]} exact component={() => <>
               {
                 this.state.user &&
+                <LandingPage user={this.state.user} signUp={this.signUp} logIn={this.logIn}/>
+              }
+            </>} />
+            <Route path={["/random"]} exact component={() => <>
+              {
+                this.state.user &&
                 <CharacterGenerator submit={this.submitCharacter} />
               }
             </>} />
             <Route path={["/characters/"]} exact component={this.characterIndexPage} />
-            <Route path={["/characters/:id"]} exact component={CharacterShowContainer} />
+            <Route path={["/characters/:id"]} exact component={this.characterShowPage} />
           </Switch>
         </Container>
       </div>

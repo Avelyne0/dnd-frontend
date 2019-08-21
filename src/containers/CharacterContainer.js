@@ -37,7 +37,7 @@ export default class CharacterContainer extends Component {
         />
         <Card.Group itemsPerRow={6}>
           {
-            filteredCharacters.map(character => <CharacterCard key={character.name} character={character} />)
+            filteredCharacters.map(character => <CharacterCard key={character.id} character={character} />)
           }
         </Card.Group>
       </>

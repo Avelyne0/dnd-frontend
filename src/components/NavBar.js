@@ -1,5 +1,4 @@
 import React from 'react'
-import UserForm from './UserForm'
 import {
   Button,
   Container,
@@ -10,7 +9,7 @@ import {
 import { Link } from 'react-router-dom'
 
 
-const Navbar = ({ home, user, signUp, logIn, logOut }) => {
+const Navbar = ({ home, user, logOut }) => {
   return (
     <Visibility
       once={false}
@@ -22,7 +21,7 @@ const Navbar = ({ home, user, signUp, logIn, logOut }) => {
       >
         <Menu>
           <Container>
-            <Menu.Item onClick={home}>
+            <Menu.Item onClick={home  }>
               <i className="d and d icon huge" /><h1>Bardic Inspiration</h1>
             </Menu.Item>
             {
@@ -36,16 +35,7 @@ const Navbar = ({ home, user, signUp, logIn, logOut }) => {
                 <Menu.Item position='right'>
                   <Button color='google plus' onClick={logOut}>Log out</Button>
                 </Menu.Item>
-              </> : <>
-                  <Menu.Item position='right'>
-                    <Menu.Item>
-                      <UserForm submit={signUp} header={'Sign up'} />
-                    </Menu.Item>
-                    <Menu.Item>
-                      <UserForm submit={logIn} header={'Log in'} />
-                    </Menu.Item>
-                  </Menu.Item>
-                </>
+              </> : null
             }
           </Container>
         </Menu>

@@ -18,7 +18,9 @@ export default function CharacterCard({ character }) {
         {character.race}
       </Card.Description>
       <Button as={Link}
-                to={'/characters/' + character.id}/>
+                to={'/characters/' + character.id}>
+Show More
+                </Button>
       </Card.Content>
     </Card>
 

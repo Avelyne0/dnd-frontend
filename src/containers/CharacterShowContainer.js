@@ -15,6 +15,7 @@ export default class CharacterShowContainer extends Component {
       .then(character => this.setState({ character }))
   }
 
+
   render() {
 
     if (!this.state.character) {
@@ -27,7 +28,7 @@ export default class CharacterShowContainer extends Component {
 
     return (
       <>
-        <CharacterShow {...this.state.character} />
+        <CharacterShow {...this.state.character} onClickHandler={this.props.deleteCharacter} />
         <Button as={Link} to="/characters" >Back to all</Button>
       </>
     )
